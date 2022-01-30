@@ -26,10 +26,15 @@
     <div class="card">
       <h3 class="card-header text-uppercase">Search By Car</h3>
       <form id="user-form" class="card-body">
-        <label class="form-label" for="username">Username</label>
-        <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+        <label class="form-label" for="carname">Carname</label>
+        <input name="carname" id="carname" type="text" autofocus="true" class="form-input" />
         <button type="submit" class="btn">Get User</button>
       </form>
+    </div>
+
+    <div class="col-12 col-sm-4">
+      <h2 class="subtitle">Your Car<span id="repo-search-term"></span></h2>
+      <div id="repos-container" class="list-group"></div>
     </div>
 
     <div class="col-12 col-md-8">
@@ -41,7 +46,7 @@
     </div>
   </main>
 
-  <script src="assets/js/homepage.js"></script>
+  <script src="assets/js/app.js"></script>
 
 </body>
 
