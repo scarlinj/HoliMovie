@@ -8,13 +8,13 @@
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Git it Done</title>
+  <title>Themecar</title>
 </head>
 
 <body class="flex-column min-100-vh">
   <header class="car">
     <h1 class="app-title"><i class="fab fa-spotify"></i> Pair Your Car with a Theme Song</h1>
-    <p>Search for a car or choose from a list of examples to see a list of songs that pair with that car!
+    <p>Search for a car to see a list of songs that pair with that car!
     </p>
   </header>
 
@@ -28,12 +28,12 @@
       <form id="user-form" class="card-body">
         <label class="form-label" for="carname">Carname</label>
         <input name="carname" id="carname" type="text" autofocus="true" class="form-input" />
-        <button type="submit" class="btn">Get User</button>
+        <button class="btn" type="submit" id="button-submit">Submit</button>
       </form>
     </div>
 
     <div class="col-12 col-sm-4">
-      <h2 class="subtitle">Your Car<span id="repo-search-term"></span></h2>
+      <h2 class="subtitle">Your Car Info<span id="repo-search-term"></span></h2>
       <div id="repos-container" class="list-group"></div>
     </div>
 
@@ -47,6 +47,10 @@
   </main>
 
   <script src="assets/js/app.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </body>
 

@@ -1,8 +1,12 @@
 var repoContainerEl = document.querySelector("#repos-container");
 var carSearchTerm = document.querySelector("#repo-search-term");
-var getUserRepos = function (user) {
+var buttonEl = document.querySelector('#search-car')
+var carName = document.querySelector('#carname')
+
+
+var getUserRepos = function (carName) {
     // format the github api url
-    var apiUrl = "https://api.github.com/users/" + user + "/repos";
+    var apiUrl = "https://car-data.p.rapidapi.com/" + carName + "/types";
 
     // make a request to the url
     // to use fetch ():
@@ -11,7 +15,7 @@ var getUserRepos = function (user) {
         })
         .then(function (data) {
             console.log(data);
-            displayRepos(data, user);
+            displayRepos(data, carName);
 
 
         });
@@ -23,25 +27,47 @@ var getUserRepos = function (user) {
 //     })
 //     .then(function (data) {
 //         console.log(data);
-//         displayRepos(data, user);
+//         displayRepos(data, car);
 //     });
 
 //
 
-var userFormEl = document.querySelector("#user-form");
+fetch("https://car-data.p.rapidapi.com/cars/types", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "car-data.p.rapidapi.com",
+            "x-rapidapi-key": "984bf8b00dmshca5e8dd06f832aep10026fjsn98abd3bedf80"
+            // Noorullah's API key
+        }
+    })
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+        displayRepos(data, carName);
+    })
+    .catch(err => {
+        console.error(err);
+    });
 
-var nameInputEl = document.querySelector("#username");
+
+
+var carFormEl = document.querySelector("#button-submit");
+
+var carInputEl = document.querySelector("#carname");
 
 var formSubmitHandler = function (event) {
     event.preventDefault();
+    console.log('Test is working!')
     // get value from input element
-    var username = nameInputEl.value.trim();
-
-    if (username) {
-        getUserRepos(username);
+    var carName = nameInputEl.value.trim();
+    console.log('carName test', carName);
+    if (carName) {
+        getUserRepos(car);
         nameInputEl.value = "";
     } else {
-        alert("Please enter a GitHub username");
+        alert("Please enter a car name");
     }
     console.log(event);
 };
@@ -92,8 +118,7 @@ var displayRepos = function (repos, searchTerm) {
     }
 };
 
-userFormEl.addEventListener("submit", formSubmitHandler);
-
+carFormEl.addEventListener("click", formSubmitHandler);
 
 
 getUserRepos();
