@@ -32,14 +32,30 @@ var getUserRepos = function (carName) {
 
 //
 
-fetch("https://car-data.p.rapidapi.com/cars/types", {
+fetch("https://car-data.p.rapidapi.com/cars/cars", {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "car-data.p.rapidapi.com",
-            "x-rapidapi-key": "984bf8b00dmshca5e8dd06f832aep10026fjsn98abd3bedf80"
-            // Noorullah's API key
+            // "x-RapidAPI-Key": "const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://car-data.p.rapidapi.com/cars?limit=100&page=0",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "car-data.p.rapidapi.com",
+                "x-rapidapi-key": "55feb7d8b7mshe4665b9f7ae2ac2p14e3a4jsnc99b26e4d884"
+            }
         }
+
+        // $.ajax(settings).done(function (response) {
+        //     console.log(response);
+        // });
+
+        // "x-rapidapi-key": "984bf8b00dmshca5e8dd06f832aep10026fjsn98abd3bedf80"
+        // Noorullah's API key
+
     })
+
     .then(response => {
         return response.json()
     })
@@ -61,7 +77,7 @@ var formSubmitHandler = function (event) {
     event.preventDefault();
     console.log('Test is working!')
     // get value from input element
-    var carName = nameInputEl.value.trim();
+    var carName = carInputEl.value.trim();
     console.log('carName test', carName);
     if (carName) {
         getUserRepos(car);
