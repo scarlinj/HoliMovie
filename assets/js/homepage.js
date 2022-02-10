@@ -97,3 +97,38 @@ userFormEl.addEventListener("submit", formSubmitHandler);
 
 
 getUserRepos();
+
+// const getInfo = function() {
+//     fetch("https://date.nager.at/api/v3/NextPublicHolidays/US").then(function(response) {
+//         response.json().then(function(data) {
+//             // console.log(data);
+
+//             for (let i = 0; i < data.length; i++){
+//                 const {localName, date, name, countryCode} = data[i];
+//                 console.log(localName, date, name, countryCode);
+
+//             document.querySelector('.output1').textContent = name;
+//             }
+            
+         
+//         });
+        
+//     });
+// }
+// getInfo();
+
+// const init = function() {
+
+//     const option = document.querySelector('#countryCoded');
+//     console.log(option.dataset.countrycode);
+//     fetch("https://date.nager.at/api/v3/AvailableCountries").then(function(response) {
+//         response.json().then(function(data) {
+//             console.log(data);
+            
+            
+         
+//         });
+        
+//     });
+// }
+// init();
