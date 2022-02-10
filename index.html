@@ -8,13 +8,14 @@
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Themecar</title>
+  <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <title>Concert Hotel Finder</title>
 </head>
 
 <body class="flex-column min-100-vh">
-  <header class="car">
-    <h1 class="app-title"><i class="fab fa-spotify"></i> Pair Your Car with a Theme Song</h1>
-    <p>Search for a car to see a list of songs that pair with that car!
+  <header class="header">
+    <h1 class="app-title"><i class="fab fa-spotify"></i> Concert Hotel Finder</h1>
+    <p>Want to see a show? Need a place to stay?
     </p>
   </header>
 
@@ -24,21 +25,21 @@
 
     </div>
     <div class="card">
-      <h3 class="card-header text-uppercase">Search By Car</h3>
+      <h3 class="card-header text-uppercase">Search By Artist</h3>
       <form id="user-form" class="card-body">
-        <label class="form-label" for="carname">Carname</label>
-        <input name="carname" id="carname" type="text" autofocus="true" class="form-input" />
+        <label class="form-label" for="artistname">Artist</label>
+        <input name="artistname" id="artistname" type="text" autofocus="true" class="form-input" />
         <button class="btn" type="submit" id="button-submit">Submit</button>
       </form>
     </div>
 
     <div class="col-12 col-sm-4">
-      <h2 class="subtitle">Your Car Info<span id="repo-search-term"></span></h2>
+      <h2 class="subtitle">Artist Albums<span id="repo-search-term"></span></h2>
       <div id="repos-container" class="list-group"></div>
     </div>
 
     <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing Songs for Your Car: <span id="repo-search-term"></span></h2>
+      <h2 class="subtitle">Showing concerts in the area: <span id="repo-search-term"></span></h2>
       <div id="repos-container" class="list-group"></div>
     </div>
 
@@ -46,7 +47,7 @@
     </div>
   </main>
 
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/homepage.js"></script>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"

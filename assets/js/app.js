@@ -1,12 +1,22 @@
+// Seatgeek API Key: 400d555ebf158201bb90cfc2888e46c64e50e4e86278f21224cae3465650fb9c 
+// Seatgeek API Key: 55feb7d8b7mshe4665b9f7ae2ac2p14e3a4jsnc99b26e4d884
+// Seatgeek Client ID: MjU2NDgzNDB8MTY0NDM1Nzk1NC43OTgzMTUz
+
 var repoContainerEl = document.querySelector("#repos-container");
-var carSearchTerm = document.querySelector("#repo-search-term");
-var buttonEl = document.querySelector('#search-car')
-var carName = document.querySelector('#carname')
+var artistSearchTerm = document.querySelector("#repo-search-term");
+var buttonEl = document.querySelector('#search-artist');
 
 
-var getUserRepos = function (carName) {
+
+var getUserRepos = function () {
+    // from car api: var carName = document.querySelector('#carName').value
+
+    var artistName = document.querySelector('#artistName')
+
     // format the github api url
-    var apiUrl = "https://car-data.p.rapidapi.com/" + carName + "/types";
+    // var apiUrl = "https://api.spotify.com/v1";
+
+    var apiUrl = "seatgeek-seatgeekcom.p.rapidapi.com"
 
     // make a request to the url
     // to use fetch ():
@@ -15,9 +25,7 @@ var getUserRepos = function (carName) {
         })
         .then(function (data) {
             console.log(data);
-            displayRepos(data, carName);
-
-
+            displayRepos(data, artistName);
         });
 };
 
@@ -32,56 +40,72 @@ var getUserRepos = function (carName) {
 
 //
 
-fetch("https://car-data.p.rapidapi.com/cars/cars", {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "car-data.p.rapidapi.com",
-            // "x-RapidAPI-Key": "const settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://car-data.p.rapidapi.com/cars?limit=100&page=0",
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "car-data.p.rapidapi.com",
-                "x-rapidapi-key": "55feb7d8b7mshe4665b9f7ae2ac2p14e3a4jsnc99b26e4d884"
-            }
-        }
+const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://seatgeek-seatgeekcom.p.rapidapi.com/events",
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "seatgeek-seatgeekcom.p.rapidapi.com",
+        "x-rapidapi-key": "55feb7d8b7mshe4665b9f7ae2ac2p14e3a4jsnc99b26e4d884"
+    }
+};
 
-        // $.ajax(settings).done(function (response) {
-        //     console.log(response);
-        // });
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
 
-        // "x-rapidapi-key": "984bf8b00dmshca5e8dd06f832aep10026fjsn98abd3bedf80"
-        // Noorullah's API key
+// fetch("https://car-data.p.rapidapi.com/cars/cars", {
+//         "method": "GET",
+//         "headers": {
+//             "x-rapidapi-host": "car-data.p.rapidapi.com",
+//             // "x-RapidAPI-Key": "const settings = {
+//             "async": true,
+//             "crossDomain": true,
+//             "url": "https://car-data.p.rapidapi.com/cars?limit=100&page=0",
+//             "method": "GET",
+//             "headers": {
+//                 "x-rapidapi-host": "car-data.p.rapidapi.com",
+//                 "x-rapidapi-key": "55feb7d8b7mshe4665b9f7ae2ac2p14e3a4jsnc99b26e4d884"
+//             }
+//         }
 
-    })
+// $.ajax(settings).done(function (response) {
+//     console.log(response);
+// });
 
-    .then(response => {
-        return response.json()
-    })
-    .then(data => {
-        console.log(data)
-        displayRepos(data, carName);
-    })
-    .catch(err => {
-        console.error(err);
-    });
+// "x-rapidapi-key": "984bf8b00dmshca5e8dd06f832aep10026fjsn98abd3bedf80"
+// Noorullah's API key
+
+// })
+
+// .then(response => {
+//         return response.json()
+//     })
+//     .then(data => {
+//         console.log(data)
+//         var artistName = document.querySelector('#artistname').value
+//         displayRepos(data, artistName);
+//     })
+//     .catch(err => {
+//         console.error(err);
+//     });
 
 
 
-var carFormEl = document.querySelector("#button-submit");
+var artistFormEl = document.querySelector("#button-submit");
 
-var carInputEl = document.querySelector("#carname");
+var artistInputEl = document.querySelector("#artistname");
 
 var formSubmitHandler = function (event) {
     event.preventDefault();
     console.log('Test is working!')
     // get value from input element
-    var carName = carInputEl.value.trim();
-    console.log('carName test', carName);
-    if (carName) {
-        getUserRepos(car);
-        nameInputEl.value = "";
+    var artistName = artistInputEl.value.trim();
+    console.log('artistName test', artistName);
+    if (artistName) {
+        getUserRepos(artistName);
+        artistInputEl.value = "";
     } else {
         alert("Please enter a car name");
     }
@@ -91,7 +115,7 @@ var formSubmitHandler = function (event) {
 var displayRepos = function (repos, searchTerm) {
     //clear old content
     repoContainerEl.textContent = "";
-    carSearchTerm.textContent = searchTerm;
+    artistSearchTerm.textContent = searchTerm;
     // var repoContainerEl = document.querySelector("#repos-container");
     // var repoSearchTerm = document.querySelector("#repo-search-term");
 
@@ -134,7 +158,4 @@ var displayRepos = function (repos, searchTerm) {
     }
 };
 
-carFormEl.addEventListener("click", formSubmitHandler);
-
-
-getUserRepos();
+artistFormEl.addEventListener("click", formSubmitHandler);

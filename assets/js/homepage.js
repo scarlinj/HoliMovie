@@ -2,10 +2,10 @@ var repoContainerEl = document.querySelector("#repos-container");
 var repoSearchTerm = document.querySelector("#repo-search-term");
 var getUserRepos = function (user) {
     // format the github api url
-    var apiUrl = "https://api.github.com/users/" + user + "/repos";
+    // var apiUrl = "https://api.spotify.com/v1";
 
     // make a request to the url
-    // to use fetch ():
+    // to use fetch():
     fetch(apiUrl).then(function (response) {
             return response.json();
         })
@@ -17,6 +17,18 @@ var getUserRepos = function (user) {
         });
 };
 
+var getInfo = function () {
+    fetch("https://date.nager.at/api/v3/AvailableCountries").then(function (response) {
+        response.json().then(function (data) {
+            console.log(data);
+            console.log(data[17].name); // example for Canada
+            console.log(data[73].name); // example for Mexico
+            console.log(data[103].name); // example for USA
+        });
+    });
+}
+getInfo();
+
 // from Ryan:
 // fetch(apiUrl).then(function (response) {
 //         return response.json();
@@ -26,7 +38,26 @@ var getUserRepos = function (user) {
 //         displayRepos(data, user);
 //     });
 
-//
+// Hotels try (this has a CORS function)
+// const output = document.querySelector('.output');
+// fetch("https://hotels-com-provider.p.rapidapi.com/v1/destinations/search?query=denver&currency=USD&locale=en_US", {
+//         "method": "GET",
+//         "headers": {
+//             "x-rapidapi-host": "hotels-com-provider.p.rapidapi.com",
+//             "x-rapidapi-key": "6f3dbc74a2msh4c78db503bca4f9p161b7ejsn0002ad20a68c"
+//         }
+//     })
+//     .then(response => {
+//         console.log(response);
+//         return response.json();
+//     }).then(function (data) {
+//         console.log(JSON.stringify(data));
+//         const destinations = Object.entries(data);
+//         console.log(destinations);
+//         for (const [key, value] of Object.entries(destinations)) {
+//             console.log(`${key}; ${value}`);
+//         }
+//     });
 
 var userFormEl = document.querySelector("#user-form");
 
