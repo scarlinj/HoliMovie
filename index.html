@@ -9,13 +9,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <title>Concert Hotel Finder</title>
+  <title>Country Holiday Finder</title>
 </head>
 
 <body class="flex-column min-100-vh">
   <header class="header">
-    <h1 class="app-title"><i class="fab fa-spotify"></i> Concert Hotel Finder</h1>
-    <p>Want to see a show? Need a place to stay?
+    <h1 class="app-title"><i class="fab fa-spotify"></i> Country Holiday Finder</h1>
+    <p>Want to Know if it's a holiday in a country?
     </p>
   </header>
 
@@ -25,21 +25,21 @@
 
     </div>
     <div class="card">
-      <h3 class="card-header text-uppercase">Search By Artist</h3>
+      <h3 class="card-header text-uppercase">Search By Country</h3>
       <form id="user-form" class="card-body">
-        <label class="form-label" for="artistname">Artist</label>
-        <input name="artistname" id="artistname" type="text" autofocus="true" class="form-input" />
+        <label class="form-label" for="countryname">Artist</label>
+        <input name="countryname" id="countryname" type="text" autofocus="true" class="form-input" />
         <button class="btn" type="submit" id="button-submit">Submit</button>
       </form>
     </div>
 
     <div class="col-12 col-sm-4">
-      <h2 class="subtitle">Artist Albums<span id="repo-search-term"></span></h2>
+      <h2 class="subtitle">Country Holidays<span id="repo-search-term"></span></h2>
       <div id="repos-container" class="list-group"></div>
     </div>
 
     <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing concerts in the area: <span id="repo-search-term"></span></h2>
+      <h2 class="subtitle">Showing Country Holidays: <span id="repo-search-term"></span></h2>
       <div id="repos-container" class="list-group"></div>
     </div>
 
