@@ -15,43 +15,57 @@
 <body class="flex-column min-100-vh">
   <header class="header">
     <h1 class="app-title"><i class="fab fa-spotify"></i> Country Holiday Finder</h1>
-    <p>Want to Know if it's a holiday in a country?
-    </p>
+    <p>Want to Know if it's a holiday in a country?</p>
   </header>
 
-
-  <main class="flex-row justify-space-between">
-    <div class="col-12 col-md-4>">
-
-    </div>
+  <!-- YEAR & COUNTRY FORM START-->
+  <main class="flex-row justify-space-around">
+  
     <div class="card">
       <h3 class="card-header text-uppercase">Search By Country</h3>
       <form id="user-form" class="card-body">
-        <label class="form-label" for="countryname">Artist</label>
-        <input name="countryname" id="countryname" type="text" autofocus="true" class="form-input" />
-        <button class="btn" type="submit" id="button-submit">Submit</button>
+        <label class="form-label" for="countryname">Country</label>
+        <input name="countryname" id="countryCode" type="text" autofocus="true" class="form-input"
+          placeholder="Country Code" />
+        <input name="years" id="yearInput" type="text" autofocus="true" class="form-input" placeholder="Year" />
+        <button class="btn" type="submit" id="submitSearch">Submit</button> 
       </form>
     </div>
+    
+    <!-- HOLIDAY CONTAINER RESULT -->
+    <div class="holidayContainer">
 
-    <div class="col-12 col-sm-4">
-      <h2 class="subtitle">Country Holidays<span id="repo-search-term"></span></h2>
-      <div id="repos-container" class="list-group"></div>
-    </div>
+    <!-- SEARCHING MOVIE FORM START -->
+    <div class="card">
+      <h3 class="card-header text-uppercase">Search By Movie & TV Show</h3>
+      <form class="col-6 card-body" id="moviesearch">
+        <label class="form-label" for="countryname">Movie Search</label>
+        <input class="form-input" type="text" id="movies"  placeholder="Keyword"/>
+        <button id="movieSearch">movie</button>
+      </form>
 
-    <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing Country Holidays: <span id="repo-search-term"></span></h2>
-      <div id="repos-container" class="list-group"></div>
-    </div>
+    <!-- SHOW MOVIE RESULT -->
+    <div id="movieContainer"></div>
 
+    <!-- SEARCHING TV FORM START -->
+    <form class="col-6 card-body" id="tvsearch">
+      <label class="form-label" for="countryname">TV Show Search</label>
+      <input class="form-input" type="text" id="tvs" placeholder="Keyword" />
+      <button id="tvSearch">tv</button>
+    </form>
+
+    <!-- SHOW TV RESULT -->
+    <div id="tvContainer"></div>
+
+    
     </form>
     </div>
   </main>
-
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+  <!-- jQUERY -->
+  <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="assets/js/homepage.js"></script>
-
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </body>
 
