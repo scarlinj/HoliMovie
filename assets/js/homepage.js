@@ -1,21 +1,21 @@
 var repoContainerEl = document.querySelector("#repos-container");
 var repoSearchTerm = document.querySelector("#repo-search-term");
-var getUserRepos = function (user) {
-    // format the github api url
-    // var apiUrl = "https://api.spotify.com/v1";
+// var getCountryRepos = function (country) {
+//     // format the github api url
+//     // var apiUrl = "https://api.spotify.com/v1";
 
-    // make a request to the url
-    // to use fetch():
-    fetch(apiUrl).then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            displayRepos(data, user);
+//     // make a request to the url
+//     // to use fetch():
+//     fetch(apiUrl).then(function (response) {
+//             return response.json();
+//         })
+//         .then(function (data) {
+//             console.log(data);
+//             displayRepos(data, country);
 
 
-        });
-};
+//         });
+// };
 
 var getInfo = function () {
     fetch("https://date.nager.at/api/v3/AvailableCountries").then(function (response) {
@@ -59,20 +59,20 @@ getInfo();
 //         }
 //     });
 
-var userFormEl = document.querySelector("#user-form");
+var countryFormEl = document.querySelector("#country-form");
 
-var nameInputEl = document.querySelector("#username");
+var nameInputEl = document.querySelector("#countryname");
 
 var formSubmitHandler = function (event) {
     event.preventDefault();
     // get value from input element
-    var username = nameInputEl.value.trim();
+    var countryName = nameInputEl.value.trim();
 
-    if (username) {
-        getUserRepos(username);
+    if (countryName) {
+        getCountryRepos(countryName);
         nameInputEl.value = "";
     } else {
-        alert("Please enter a GitHub username");
+        alert("Please enter a GitHub Countryname");
     }
     console.log(event);
 };
@@ -123,8 +123,8 @@ var displayRepos = function (repos, searchTerm) {
     }
 };
 
-userFormEl.addEventListener("submit", formSubmitHandler);
+countryFormEl.addEventListener("submit", formSubmitHandler);
 
 
 
-getUserRepos();
+getCountryRepos();
