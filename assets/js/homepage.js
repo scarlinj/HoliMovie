@@ -3,48 +3,83 @@ const yearInput = document.querySelector(`#yearInput`);
 const submitBtn = document.querySelector(`#submitSearch`);
 const holidayContainer = document.querySelector(`#holidayContainer`)
 
-submitBtn.addEventListener(`click`, function(event) {
-event.preventDefault();
-var year = yearInput.value;
-var country = countryCode.value;
-var searchUrl = `https://date.nager.at/api/v3/PublicHolidays/${year}/${country}`;
+submitBtn.addEventListener(`click`, function (event) {
+    event.preventDefault();
+    var year = yearInput.value;
+    var country = countryCode.value;
+    var searchUrl = `https://date.nager.at/api/v3/PublicHolidays/${year}/${country}`;
 
     fetch(searchUrl)
-    .then(function (response) {
-        response.json().then(function (data) {
-        
-            console.log(data);
+        .then(function (response) {
+            response.json().then(function (data) {
 
-            for (let i = 0; i < data.length; i++) {
+                console.log(data);
 
-                const {localName, date, countryCode, type} = data[i];
-                console.log(localName, date, countryCode, type);
-                
-                var text = document.createElement(`h1`);
-                
-                holidayContainer.appendChild(text);
-            }
+                for (let i = 0; i < data.length; i++) {
+
+                    const {
+                        localName,
+                        date,
+                        countryCode,
+                        type
+                    } = data[i];
+                    console.log(localName, date, countryCode, type);
+
+                    var text = document.createElement(`h1`);
+
+                    holidayContainer.appendChild(text);
+                }
+            });
         });
-    });
+});
+
+// Holiday Search
+
+// const yearInput = document.querySelector(`#yearInput`);
+// const submitBtn = document.querySelector(`#submitSearch`);
+// const holidayContainer = document.querySelector(`#holidayContainer`)
+
+submitBtn.addEventListener(`click`, function (event) {
+    event.preventDefault();
+    var year = yearInput.value;
+    var country = countryCode.value;
+    var searchUrl = `https://date.nager.at/api/v3/PublicHolidays/${year}/${country}`;
+    fetch(searchUrl)
+        .then(function (response) {
+            response.json().then(function (data) {
+                console.log(data);
+                for (let i = 0; i < data.length; i++) {
+                    const {
+                        localName,
+                        date,
+                        countryCode,
+                        type
+                    } = data[i];
+                    console.log(localName, date, countryCode, type);
+                    var text = document.createElement(`h1`);
+                    holidayContainer.appendChild(text);
+                }
+            });
+        });
 });
 
 // Movie Search
 
 var apiKey = `6bbce96a`;
 
-$(document).ready(function(){
-    $(`#moviesearch`).submit(function(event){
+$(document).ready(function () {
+    $(`#moviesearch`).submit(function (event) {
         event.preventDefault()
 
         var movie = $(`#movies`).val()
         var result = ""
         var searchUrl = `http://www.omdbapi.com/?t=` + movie + `&apikey=` + apiKey;
-        
+
         $.ajax({
-            method:`GET`,
+            method: `GET`,
             url: searchUrl,
-            success: function(data){
-                
+            success: function (data) {
+
                 console.log(data);
 
                 result = `<img src="${data.Poster}"/>
@@ -59,19 +94,19 @@ $(document).ready(function(){
 
 // TV Search
 
-$(document).ready(function(){
-    $(`#tvsearch`).submit(function(event){
+$(document).ready(function () {
+    $(`#tvsearch`).submit(function (event) {
         event.preventDefault()
 
         var tvs = $(`#tvs`).val()
         var results = ""
         var searchUrl = `http://api.tvmaze.com/search/shows?q=${tvs}`;
-        
+
         $.ajax({
-            method:`GET`,
+            method: `GET`,
             url: searchUrl,
-            success: function(data){
-                
+            success: function (data) {
+
                 console.log(data[0].show.image);
                 console.log(data[0].show.name);
 
@@ -103,7 +138,7 @@ $(document).ready(function(){
 //         return response.json()
 //     })    
 //     .then(function (movieResponse) {
-            
+
 //             console.log(movieResponse);
 
 //             for (var j=0; j < movieResponse.length; j++) {
@@ -115,7 +150,7 @@ $(document).ready(function(){
 //                 img.setAttribute(`src`,currentMovie.Poster);
 //                 movieContainer.appendChild(img);
 
-            
+
 //             }
 
 //             });
