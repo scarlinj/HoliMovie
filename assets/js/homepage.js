@@ -11,22 +11,29 @@ var searchUrl = `https://date.nager.at/api/v3/PublicHolidays/${year}/${country}`
 
     fetch(searchUrl)
     .then(function (response) {
-        response.json().then(function (data) {
+        return response.json();
+    })
+    .then(function (data) {
         
             console.log(data);
 
             for (let i = 0; i < data.length; i++) {
 
-                const {localName, date, countryCode, type} = data[i];
-                console.log(localName, date, countryCode, type);
+                const currentData = data[i];
+                console.log(currentData);
                 
-                var text = document.createElement(`h1`);
-                
-                holidayContainer.appendChild(text);
+                var p1 = document.createElement(`p`);
+                var p2 = document.createElement(`p`);
+                var p3 = document.createElement(`p`);
+                p1.textContent = currentData.date;
+                p2.textContent = currentData.localName;
+                p3.textContent = currentData.countryCode;
+                holidayContainer.appendChild(p1);
+                holidayContainer.appendChild(p2);
+                holidayContainer.appendChild(p3);
             }
         });
     });
-});
 
 // Movie Search
 
@@ -84,39 +91,3 @@ $(document).ready(function(){
         })
     })
 })
-
-
-// const movieInput = document.querySelector(`#movies`);
-// const movieBtn = document.querySelector(`#movieSearch`);
-// const movieContainer = document.querySelector(`.movieContainer`)
-
-// movieBtn.addEventListener(`click`, function(event) {
-// event.preventDefault();
-// var keyword = movies.value;
-// var apiKey = `6bbce96a`;
-
-// var searchUrl = `http://www.omdbapi.com/?s=${keyword}&apikey=${apiKey}`;
-
-//     fetch(searchUrl)
-//     .then(function (response) {
-//         //console.log(response);
-//         return response.json()
-//     })    
-//     .then(function (movieResponse) {
-            
-//             console.log(movieResponse);
-
-//             for (var j=0; j < movieResponse.length; j++) {
-//                 var currentMovie = movieResponse[j];
-
-//                 console.log(currentMovie.Poster);
-
-//                 var img = document.createElement(`img`);
-//                 img.setAttribute(`src`,currentMovie.Poster);
-//                 movieContainer.appendChild(img);
-
-            
-//             }
-
-//             });
-//         });
