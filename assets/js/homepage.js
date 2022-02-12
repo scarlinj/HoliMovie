@@ -19,17 +19,13 @@ submitBtn.addEventListener(`click`, function (event) {
             for (let i = 0; i < data.length; i++) {
 
                 const currentData = data[i];
-
+                
                 console.log(currentData);
+
                 var p1 = document.createElement(`p`);
-                var p2 = document.createElement(`p`);
-                var p3 = document.createElement(`p`);
-                p1.textContent = currentData.date;
-                p2.textContent = currentData.localName;
-                p3.textContent = currentData.countryCode;
+                p1.textContent = currentData.date + ` ` + currentData.localName + ` ` + currentData.countryCode;
                 holidayContainer.appendChild(p1);
-                holidayContainer.appendChild(p2);
-                holidayContainer.appendChild(p3);
+                
             }
         });
 });
