@@ -16,19 +16,17 @@
   <header class="header">
     <h1 class="app-title"><i class="fab fa-spotify"></i> Country Holiday Finder</h1>
     <p>Want to Know if it's a holiday in a country?</p>
-    <!-- DROP DOWN FOR COUNTRY CODE -->
-      <select id="locality-dropdown" name="locality"></select>
   </header>
 
   <main class="flex-row justify-space-between">
 
     <!-- YEAR & COUNTRY FORM START-->
-    <div class="card col-6">
+    <div class="card col-4">
       <h3 class="card-header text-uppercase">Search By Country</h3>
       <form id="user-form" class="card-body">
         <label class="form-label">Country</label>
-
-        <input name="countryname" id="countryCode" type="text" class="form-input" placeholder="Country Code" />
+        <!-- DROP DOWN FOR COUNTRY CODE -->
+        <select id="locality-dropdown" name="locality"></select>
         <input name="years" id="yearInput" type="text" class="form-input" placeholder="Year" />
         <button class="btn" type="submit" id="submitSearch">Submit</button>
       </form>
@@ -38,7 +36,7 @@
     <div id="holidayContainer" class="col-6"></div>
 
     <!-- SEARCHING MOVIE FORM -->
-    <div class="col-6">
+    <div class="col-4">
       <div class="card">
         <h3 class="card-header text-uppercase">Search By Movie & TV Show</h3>
         <form class="card-body" id="moviesearch">

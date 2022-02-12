@@ -3,6 +3,7 @@ const submitBtn = document.querySelector(`#submitSearch`);
 const countryCode = document.querySelector(`#countryCode`);
 const holidayContainer = document.querySelector(`#holidayContainer`)
 const myInput = document.querySelector('#dropdown');
+let dropdownValue = ``;
 
 // Country Code Drop Down
 let dropdown = document.getElementById('locality-dropdown');
@@ -20,31 +21,39 @@ fetch('https://date.nager.at/api/v3/AvailableCountries')
 
         for (let i = 0; i < data.length; i++) {
             option = document.createElement('option');
-            option.text = data[i].name + ` (` + data[i].countryCode + `)`;
+            option.text = data[i].name;
+            option.value = data[i].countryCode;
             dropdown.add(option);
         }
     });
+// Country Code to 
+$("#locality-dropdown").on("change", function(e) {
+    dropdownValue = e.target.value;
+    console.log(e.target.value);
+})
 
 // Public Holiday API Using fetch (1922 ~ 2122) 200 years
 submitBtn.addEventListener(`click`, function (event) {
     event.preventDefault();
     var year = yearInput.value;
-    var country = countryCode.value;
-    var searchUrl = `https://date.nager.at/api/v3/PublicHolidays/${year}/${country}`;
+    console.log(year);
+    var searchUrl = `https://date.nager.at/api/v3/PublicHolidays/${year}/${dropdownValue}`;
+
     fetch(searchUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            for (let i = 0; i < data.length; i++) {
-                const currentData = data[i];
-                //console.log(currentData);
+            for (let j = 0; j < data.length; j++) {
+                const currentData = data[j];
+                console.log(currentData);
                 var p1 = document.createElement(`p`);
                 p1.textContent = currentData.date + ` ` + currentData.localName + ` ` + currentData.countryCode;
                 holidayContainer.appendChild(p1);
             }
         });
 });
+
 // Movie Search Using ajax
 var apiKey = `6bbce96a`;
 $(document).ready(function () {
@@ -68,6 +77,7 @@ $(document).ready(function () {
         })
     })
 })
+
 // TV Search Using ajax
 $(document).ready(function () {
     $(`#tvsearch`).submit(function (event) {
