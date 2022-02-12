@@ -18,49 +18,52 @@
     <p>Want to Know if it's a holiday in a country?</p>
   </header>
 
-  <!-- YEAR & COUNTRY FORM START-->
-  <main class="flex-row justify-space-around">
-  
-    <div class="card">
-      <h3 class="card-header text-uppercase">Search By Country</h3>
-      <form id="user-form" class="card-body">
-        <label class="form-label" for="countryname">Country</label>
-        <input name="countryname" id="countryCode" type="text" autofocus="true" class="form-input"
-          placeholder="Country Code" />
-        <input name="years" id="yearInput" type="text" autofocus="true" class="form-input" placeholder="Year" />
-        <button class="btn" type="submit" id="submitSearch">Submit</button> 
-      </form>
+  <main>
+    <div class="flex-row justify-space-between">
+<!-- YEAR & COUNTRY FORM START-->
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Country</h3>
+          <form id="user-form" class="col-6 card-body">
+            <label class="form-label">Country</label>
+            <input name="countryname" id="countryCode" type="text" class="form-input" placeholder="Country Code" />
+            <input name="years" id="yearInput" type="text" class="form-input" placeholder="Year" />
+            <button class="btn" type="submit" id="submitSearch">Submit</button>
+        </form>
+      </div>
     </div>
-    
-    <!-- HOLIDAY CONTAINER RESULT -->
-    <div id="holidayContainer">
+      
+<!-- HOLIDAY CONTAINER -->
+      <div id="holidayContainer"></div>
 
-    <!-- SEARCHING MOVIE FORM START -->
+    <div class="flex-row justify-space-between">
+<!-- MOVIE & TV SEARCH BOX -->
+    <div class="flex-row justify-space-around">
+    <!-- SEARCHING MOVIE FORM -->
     <div class="card">
       <h3 class="card-header text-uppercase">Search By Movie & TV Show</h3>
       <form class="col-6 card-body" id="moviesearch">
-        <label class="form-label" for="countryname">Movie Search</label>
-        <input class="form-input" type="text" id="movies"  placeholder="Keyword"/>
+        <label class="form-label">Movie Search</label>
+        <input class="form-input" type="text" id="movies" placeholder="Keyword" />
         <button class="btn" id="movieSearch">movie</button>
       </form>
 
-    <!-- SHOW MOVIE RESULT -->
+      <!-- SEARCHING TV FORM -->
+      <form class="col-6 card-body" id="tvsearch">
+        <label class="form-label" >TV Show Search</label>
+        <input class="form-input" type="text" id="tvs" placeholder="Keyword" />
+        <button class="btn" id="tvSearch">tv</button>
+      </form>
+    </div>
+    </div>
+  </div>
+<!-- MOVIE & TV RESULT BOX -->
+    <!-- MOVIE RESULT CONTAINER-->
     <div id="movieContainer"></div>
 
-    <!-- SEARCHING TV FORM START -->
-    <form class="col-6 card-body" id="tvsearch">
-      <label class="form-label" for="countryname">TV Show Search</label>
-      <input class="form-input" type="text" id="tvs" placeholder="Keyword" />
-      <button class="btn" id="tvSearch">tv</button>
-    </form>
-
-    <!-- SHOW TV RESULT -->
+    <!-- TV RESULT CONTAINER -->
     <div id="tvContainer"></div>
-
-    
-    </form>
-    </div>
-  </main>
+  
+</main>
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
   <!-- jQUERY -->
