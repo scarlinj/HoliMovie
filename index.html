@@ -39,7 +39,8 @@
       <h3 class="card-header text-uppercase">Holiday Results</h3>
       <form id="user-form" class="card-body">
         <label class="form-label">Holiday</label>
-        <!-- DROP DOWN FOR COUNTRY CODE -->
+
+        <!-- abandoned: search by holiday -->
         <!-- <select id="holiday-dropdown" name="holiday"></select>
         <input name="years" id="yearInput" type="text" class="form-input" placeholder="Search here" />
         <button class="btn" type="submit" id="submitSearch">Submit</button> -->
@@ -47,13 +48,24 @@
 
     </div>
 
-    <button onclick="myFunction()">Clear Console</button>
+    <!-- Trigger the Modal -->
+
+    <button id="clearBtn" onclick="myFunction()">Clear Results</button>
+
+    <div id="clearModal" class="modal">
+      <!--prompt description-->
+      <div class="modal-content">
+        <!-- <span class="Clear"></span>
+        <p>Are you sure you want to clear your search results?</p> -->
+      </div>
+    </div>
 
     <script>
       console.log("Hello! Press the button to clear the console!");
 
       function myFunction() {
-        console.clear();
+        holidayContainer.textContent = "";
+        // console.clear();
         // localStorage.clear();
       }
     </script>
@@ -61,11 +73,11 @@
     <!-- SEARCHING MOVIE FORM -->
     <div class="col-4">
       <div class="card">
-        <h3 class="card-header text-uppercase">Search By Movie</h3>
+        <h3 class="card-header text-uppercase">Search For a Movie Plot</h3>
         <form class="card-body" id="moviesearch">
-          <label class="form-label">Movie Search</label>
+          <label class="form-label">Type a movie title:</label>
           <input class="form-input" type="text" id="movies" placeholder="Type here" />
-          <button class="btn" id="movieSearch">movie</button>
+          <button class="btn" id="movieSearch">Search</button>
         </form>
 
         <!-- SEARCHING TV FORM -->
@@ -74,8 +86,25 @@
           <input class="form-input" type="text" id="tvs" placeholder="Keyword" />
           <button class="btn" id="tvSearch">tv</button>
         </form> -->
+
+        <div id="holidayContainer" class="card col-6">
+          <h3 class="card-header text-uppercase">Movie Results</h3>
+          <form id="user-form" class="card-body">
+            <label class="form-label">Holiday</label>
+
+            <button id="clearBtn" onclick="myFunction()">Clear Results</button>
+            <script>
+              function myFunction() {
+                holidayContainer.textContent = "";
+                // console.clear();
+                // localStorage.clear();
+              }
+            </script>
+        </div>
       </div>
     </div>
+
+
 
     <!-- MOVIE & TV RESULT BOX -->
     <!-- MOVIE RESULT CONTAINER-->
