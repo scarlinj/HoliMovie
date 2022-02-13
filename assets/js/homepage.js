@@ -2,6 +2,7 @@ const yearInput = document.querySelector(`#yearInput`);
 const submitBtn = document.querySelector(`#submitSearch`);
 const countryCode = document.querySelector(`#countryCode`);
 const holidayContainer = document.querySelector(`#holidayContainer`)
+const movieContainer = document.querySelector(`#movieContainer`)
 const myInput = document.querySelector('#dropdown');
 let dropdownValue = ``;
 
@@ -92,6 +93,14 @@ submitBtn.addEventListener(`click`, function (event) {
     }
 });
 
+console.log("Hello! Press the button to clear the console!");
+
+function clearHolidays() {
+    holidayContainer.textContent = "";
+    // console.clear();
+    // localStorage.clear();
+}
+
 // Country Code to Holiday
 $("#holiday-dropdown").on("change", function (e) {
     dropdownValue = e.target.value;
@@ -114,34 +123,21 @@ $(document).ready(function () {
                 result = `
                 <img src="${data.Poster}"/>
                 <h2>${data.Title}<h2>
-                <h2>${data.Plot}<h2>
+                <h3>${data.Plot}<h3>
                 `;
 
                 $("#movieContainer").html(result);
             }
         })
+        // 'movie-form'.textContent = "";
+        movieContainer.textContent = "";
     })
 })
 
-// TV Search Using ajax
-$(document).ready(function () {
-    $(`#tvsearch`).submit(function (event) {
-        event.preventDefault()
-        var tvs = $(`#tvs`).val()
-        var results = ""
-        var searchUrl = `http://api.tvmaze.com/search/shows?q=${tvs}`;
-        $.ajax({
-            method: `GET`,
-            url: searchUrl,
-            success: function (data) {
-                console.log(data[0].show.image);
-                console.log(data[0].show.name);
-                results = `
-                <img src="${data[0].show.image.medium}"/>
-                <h2>${data[0].show.name}<h2>
-                `;
-                $("#tvContainer").html(results);
-            }
-        })
-    })
-})
+console.log("Hello! Press the button to clear the console!");
+
+function clearMovie() {
+    movieContainer.textContent = "";
+    // console.clear();
+    // localStorage.clear();
+}

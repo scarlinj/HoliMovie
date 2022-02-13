@@ -31,7 +31,7 @@
           <br>
           <input name="years" id="yearInput" type="text" class="form-input" placeholder="Type here" />
           <button class="btn" type="submit" id="submitSearch">Submit</button>
-          <button id="clearBtn" onclick="myFunction()">Clear Holiday Results</button>
+          <!-- <button id="clearBtn" onclick="clearHolidays()">Clear Holiday Results</button> -->
 
           <div id="clearModal" class="modal">
             <!--prompt description-->
@@ -41,15 +41,6 @@
             </div>
           </div>
 
-          <script>
-            console.log("Hello! Press the button to clear the console!");
-
-            function myFunction() {
-              holidayContainer.textContent = "";
-              // console.clear();
-              // localStorage.clear();
-            }
-          </script>
       </form>
     </div>
 
@@ -79,24 +70,26 @@
           <label class="form-label">Type a movie title:</label>
           <input class="form-input" type="text" id="movies" placeholder="Type here" />
           <button class="btn" id="movieSearch">Search</button>
-        </form>
 
-        <!-- SEARCHING TV FORM -->
-        <!-- <form class="card-body" id="tvsearch">
+
+
+          <!-- SEARCHING TV FORM -->
+          <!-- <form class="card-body" id="tvsearch">
           <label class="form-label">TV Show Search</label>
           <input class="form-input" type="text" id="tvs" placeholder="Keyword" />
           <button class="btn" id="tvSearch">tv</button>
         </form> -->
 
 
-        <button id="movieClearBtn" onclick="clearMovie()">Clear Movie Results</button>
-        <script>
-          function clearMovie() {
-            movieContainer.textContent = "";
-            // console.clear();
-            // localStorage.clear();
-          }
-        </script>
+          <!-- <button id="movieClearBtn" onclick="clearMovie()">Clear Movie Results</button> -->
+          <!-- <script>
+            function clearMovie() {
+              movieContainer.textContent = "";
+              // console.clear();
+              // localStorage.clear();
+            }
+          </script> -->
+        </form>
       </div>
     </div>
 
