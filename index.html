@@ -25,12 +25,31 @@
       <h3 class="card-header text-uppercase">Search By Country</h3>
       <form id="user-form" class="card-body">
         <label class="form-label">Country</label>
-        <!-- DROP DOWN FOR COUNTRY CODE -->
+        <!-- DROP DOWN FOR COUNTRY -->
         <select id="locality-dropdown" name="locality"></select>
         <label class="form-label">Year</h3>
           <br>
           <input name="years" id="yearInput" type="text" class="form-input" placeholder="Type here" />
           <button class="btn" type="submit" id="submitSearch">Submit</button>
+          <button id="clearBtn" onclick="myFunction()">Clear Holiday Results</button>
+
+          <div id="clearModal" class="modal">
+            <!--prompt description-->
+            <div class="modal-content">
+              <!-- <span class="Clear"></span>
+              <p>Are you sure you want to clear your search results?</p> -->
+            </div>
+          </div>
+
+          <script>
+            console.log("Hello! Press the button to clear the console!");
+
+            function myFunction() {
+              holidayContainer.textContent = "";
+              // console.clear();
+              // localStorage.clear();
+            }
+          </script>
       </form>
     </div>
 
@@ -50,25 +69,7 @@
 
     <!-- Trigger the Modal -->
 
-    <button id="clearBtn" onclick="myFunction()">Clear Results</button>
 
-    <div id="clearModal" class="modal">
-      <!--prompt description-->
-      <div class="modal-content">
-        <!-- <span class="Clear"></span>
-        <p>Are you sure you want to clear your search results?</p> -->
-      </div>
-    </div>
-
-    <script>
-      console.log("Hello! Press the button to clear the console!");
-
-      function myFunction() {
-        holidayContainer.textContent = "";
-        // console.clear();
-        // localStorage.clear();
-      }
-    </script>
 
     <!-- SEARCHING MOVIE FORM -->
     <div class="col-4">
@@ -87,20 +88,15 @@
           <button class="btn" id="tvSearch">tv</button>
         </form> -->
 
-        <div id="holidayContainer" class="card col-6">
-          <h3 class="card-header text-uppercase">Movie Results</h3>
-          <form id="user-form" class="card-body">
-            <label class="form-label">Holiday</label>
 
-            <button id="clearBtn" onclick="myFunction()">Clear Results</button>
-            <script>
-              function myFunction() {
-                holidayContainer.textContent = "";
-                // console.clear();
-                // localStorage.clear();
-              }
-            </script>
-        </div>
+        <button id="movieClearBtn" onclick="clearMovie()">Clear Movie Results</button>
+        <script>
+          function clearMovie() {
+            movieContainer.textContent = "";
+            // console.clear();
+            // localStorage.clear();
+          }
+        </script>
       </div>
     </div>
 
@@ -108,7 +104,13 @@
 
     <!-- MOVIE & TV RESULT BOX -->
     <!-- MOVIE RESULT CONTAINER-->
-    <div id="movieContainer"></div>
+    <div id="movieContainer" class="card col-6">
+      <h3 class="card-header text-uppercase">Movie Results</h3>
+      <form id="user-form" class="card-body">
+        <label class="form-label">Movie</label>
+      </form>
+
+    </div>
 
     <!-- TV RESULT CONTAINER -->
     <div id="tvContainer"></div>
