@@ -9,7 +9,7 @@ let dropdownValue = ``;
 let dropdown = document.getElementById('locality-dropdown');
 dropdown.length = 0;
 let defaultOption = document.createElement('option');
-defaultOption.text = 'Finding Country Code';
+defaultOption.text = '-Countries-';
 dropdown.add(defaultOption);
 dropdown.selectedIndex = 0;
 
@@ -27,14 +27,23 @@ fetch('https://date.nager.at/api/v3/AvailableCountries')
         }
     });
 // Country Code to 
-$("#locality-dropdown").on("change", function(e) {
+$("#locality-dropdown").on("change", function (e) {
     dropdownValue = e.target.value;
     console.log(e.target.value);
 })
 
 // Public Holiday API Using fetch (1922 ~ 2122) 200 years
+// let holidayDropdown = document.getElementById('holiday-dropdown');
+// holidayDropdown.length = 0;
+// let defaultHoliday = document.createElement('option');
+// defaultHoliday.text = 'Finding Holiday';
+// holidayDropdown.add(defaultOption);
+// holidayDropdown.selectedIndex = 0;
+
 submitBtn.addEventListener(`click`, function (event) {
+
     event.preventDefault();
+
     var year = yearInput.value;
     console.log(year);
     var searchUrl = `https://date.nager.at/api/v3/PublicHolidays/${year}/${dropdownValue}`;
@@ -51,8 +60,17 @@ submitBtn.addEventListener(`click`, function (event) {
                 p1.textContent = currentData.date + ` ` + currentData.localName + ` ` + currentData.countryCode;
                 holidayContainer.appendChild(p1);
             }
+            $("#results").empty().append(p1);
         });
+    // 'user-form'.textContent = "";
+    holidayContainer.textContent = "";
 });
+
+// Country Code to Holiday
+$("#holiday-dropdown").on("change", function (e) {
+    dropdownValue = e.target.value;
+    console.log(e.target.value);
+})
 
 // Movie Search Using ajax
 var apiKey = `6bbce96a`;
@@ -70,6 +88,7 @@ $(document).ready(function () {
                 result = `
                 <img src="${data.Poster}"/>
                 <h2>${data.Title}<h2>
+                <h2>${data.Plot}<h2>
                 `;
 
                 $("#movieContainer").html(result);
