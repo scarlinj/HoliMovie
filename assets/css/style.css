@@ -1,9 +1,9 @@
 :root {
-  --primary: #a9e7c8;
+  --primary: #ffffff;
   --secondary: #a3f0ca;
   --tertiary: #a7b3e9;
-  --light-dark: #726e6c;
-  --dark: #283128;
+  --light-dark: #70a1ff;
+  --dark: #2f3542;
   --border-radius: .3rem;
 }
 
@@ -210,6 +210,7 @@ p {
 
 .card-body {
   padding: 2.5%;
+
 }
 
 /* FORM */
