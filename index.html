@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <title>HoliMovie</title>
+  <title>Country Holiday Finder</title>
 </head>
 
-<body class="flex-column min-100-vh">
+<body class="min-100-vh">
   <header class="header">
     <h1 class="app-title"><i class="fa fa-cloud"></i> Country Holiday Finder</h1>
     <p>Want to Know if it's a holiday in a country?</p>
@@ -21,7 +21,8 @@
   <main class="flex-row justify-space-between">
 
     <!-- YEAR & COUNTRY FORM START-->
-    <div class="card col-4">
+    <div class="col-4">
+      <div class="card">
       <h3 class="card-header text-uppercase">Search By Country</h3>
       <form id="user-form" class="card-body">
         <label class="form-label">Country</label>
@@ -31,27 +32,19 @@
           <br>
           <input name="years" id="yearInput" type="text" class="form-input" placeholder="Type here" />
           <button class="btn" type="submit" id="submitSearch">Submit</button>
-          <!-- <button id="clearBtn" onclick="clearHolidays()">Clear Holiday Results</button> -->
-
       </form>
     </div>
+    </div>
 
-    <!-- HOLIDAY CONTAINER -->
-    <div id="holidayContainer" class="card col-6">
+    <!-- HOLIDAY RESULT CONTAINER -->
+    <div id="holidayContainer" class="card col-8">
       <h3 class="card-header text-uppercase">Holiday Results</h3>
-      <form id="user-form" class="card-body">
-        <label class="form-label">Holiday</label>
-
-        <!-- abandoned: search by holiday -->
-        <!-- <select id="holiday-dropdown" name="holiday"></select>
-        <input name="years" id="yearInput" type="text" class="form-input" placeholder="Search here" />
-        <button class="btn" type="submit" id="submitSearch">Submit</button> -->
-      </form>
-
+      <div id="holidayContainerResult">
+      <form id="user-form" class="card-body"></form>
+      </div>
     </div>
 
     <!-- Trigger the Modal -->
-
     <div id="clearModal" class="modal">
 
       <!--prompt description-->
@@ -69,43 +62,17 @@
           <label class="form-label">Type a movie title:</label>
           <input class="form-input" type="text" id="movies" placeholder="Type here" />
           <button class="btn" id="movieSearch">Search</button>
-
-
-
-          <!-- SEARCHING TV FORM -->
-          <!-- <form class="card-body" id="tvsearch">
-          <label class="form-label">TV Show Search</label>
-          <input class="form-input" type="text" id="tvs" placeholder="Keyword" />
-          <button class="btn" id="tvSearch">tv</button>
-        </form> -->
-
-
-          <!-- <button id="movieClearBtn" onclick="clearMovie()">Clear Movie Results</button> -->
-          <!-- <script>
-            function clearMovie() {
-              movieContainer.textContent = "";
-              // console.clear();
-              // localStorage.clear();
-            }
-          </script> -->
         </form>
       </div>
     </div>
 
-
-
-    <!-- MOVIE & TV RESULT BOX -->
     <!-- MOVIE RESULT CONTAINER-->
-    <div id="movieContainer" class="card col-6">
+    <div id="movieContainer" class="card col-8">
       <h3 class="card-header text-uppercase">Movie Results</h3>
       <form id="user-form" class="card-body">
-        <label class="form-label">Movie</label>
+        <div id="movieContainerResult"></div>
       </form>
-
     </div>
-
-    <!-- TV RESULT CONTAINER -->
-    <div id="tvContainer"></div>
 
   </main>
   <!-- MDB -->
