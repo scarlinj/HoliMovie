@@ -56,8 +56,10 @@ This app was created by the following collaborators:
   
 This project would not have been possible without the resources and tutelage offered by the following:
   
+- [Our Boot Camp](https://bootcamp.berkeley.edu/coding/)  
 - [UI Colors](https://flatuicolors.com/)
 - [UX design tips](https://uxplanet.org/neumorphic-buttons-using-basic-html-css-477cb6f941c0)
+- [Markdown guide](https://www.markdownguide.org/basic-syntax/)
 
   
 
