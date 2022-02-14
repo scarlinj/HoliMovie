@@ -9,25 +9,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <title>Country Holiday Finder</title>
+  <title>HoliMovie</title>
 </head>
 
 <body class="min-100-vh">
   <header class="header">
-    <h1 class="app-title"><i class="fa fa-cloud"></i> Country Holiday Finder</h1>
-    <p>Want to Know if it's a holiday in a country?</p>
+    <h1 class="app-title"><i class="fa fa-cloud"></i>HoliMovie</h1>
+    <p>Welcome! Please enter your search query below.</p>
   </header>
 
   <main class="flex-row justify-space-between">
 
     <!-- YEAR & COUNTRY FORM START-->
-    <div class="col-4">
+    <div class="col-4 col-md-4">
       <div class="card">
       <h3 class="card-header text-uppercase">Search By Country</h3>
       <form id="user-form" class="card-body">
         <label class="form-label">Country</label>
         <!-- DROP DOWN FOR COUNTRY -->
-        <select id="locality-dropdown" name="locality"></select>
+        <select id="locality-dropdown" class= "col-4 col-md-4" name="locality"></select>
         <label class="form-label">Year</h3>
           <br>
           <input name="years" id="yearInput" type="text" class="form-input" placeholder="Type here" />
@@ -50,7 +50,7 @@
       <!--prompt description-->
       <div class="modal-content">
         <span class="clear"> X </span>
-        <p>Invalid input</p>
+        <p>Please enter a year between 1922 and 2122.</p>
       </div>
     </div>
 
