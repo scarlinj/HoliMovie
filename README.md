@@ -2,7 +2,7 @@
 
 ## Description
 
-Welcome to HoliMovie.  This app was created as a collaborative project between classmates to answer a question that seems trivial, but that ties us all together. When was/is that holiday? Holidays are celebratory times universally shared,  as no matter a person's nationality, every country shares the joy of having holidays.  To this end, HoliMovie provides a tool to predict or recall, by year, the dates of holidays in 110 countries. HoliMovie aims to serve educators seeking classroom enrichment, human resources staff wishing to celebrate employees, academics performing research, and any other user interested in applying it. 
+Welcome to HoliMovie.  This app was created as a collaborative project between classmates to answer a question that seems trivial, but that ties us all together. When was/is that holiday? Holidays are celebratory times universally shared. No matter a person's nationality, every country shares the joy of having holidays.  To this end, HoliMovie provides a tool to predict or recall, by year, the dates of holidays in 110 countries. HoliMovie aims to serve educators seeking classroom enrichment, human resources staff wishing to celebrate employees, academics performing research, and any other user interested in applying it. 
 
 Holimovie is not only a useful and practical tool. As an added bonus, Holimovie provides the user the opportunity to search any movie title they can think of, 
 and return that movies poster and plot summary. The poster will be in color, and the plot summary won't contain any spoilers. We added this feature for fun, and 
