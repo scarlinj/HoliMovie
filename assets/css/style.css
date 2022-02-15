@@ -2,6 +2,7 @@
   --primary: #ffffff;
   --light-dark: #70a1ff;
   --dark: #2f3542;
+  --tertiary: #f8ff9d;
   --border-radius: .3rem;
 }
 
@@ -117,6 +118,13 @@ p {
   background-color: var(--light-dark);
   box-shadow: 3px 3px var(--dark);
   transform: translate(-1px, -1px);
+}
+
+.btn:hover {
+  color: var(--dark);
+  background-color: var(--tertiary);
+  transform: translate(0, 0);
+  box-shadow: 2px 2px var(--dark);
 }
 
 .btn-inline {

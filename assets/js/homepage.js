@@ -1,8 +1,9 @@
 const yearInput = document.querySelector(`#yearInput`);
 const submitBtn = document.querySelector(`#submitSearch`);
 const countryCode = document.querySelector(`#countryCode`);
-const holidayContainer = document.querySelector(`#holidayContainer`)
-const movieContainer = document.querySelector(`#movieContainer`)
+const holidayContainer = document.querySelector(`#holidayContainer`);
+const holidayContainerResult = document.querySelector(`#holidayContainerResult`);
+const movieContainer = document.querySelector(`#movieContainer`);
 
 // Country Code Drop Down
 let dropdownValue = ``;
@@ -18,7 +19,6 @@ fetch('https://date.nager.at/api/v3/AvailableCountries')
         return response.json();
     })
     .then(function (data) {
-
         for (let i = 0; i < data.length; i++) {
             option = document.createElement('option');
             option.text = data[i].name;
@@ -33,7 +33,6 @@ $("#locality-dropdown").on("change", function (e) {
 })
 
 // Public Holiday API Using fetch (1922 ~ 2122) 200 years
-
 submitBtn.addEventListener(`click`, function (event) {
 
     event.preventDefault();
@@ -54,13 +53,12 @@ submitBtn.addEventListener(`click`, function (event) {
                 console.log(currentData);
                 var p1 = document.createElement(`p`);
                 p1.textContent = "     " + currentData.date + ` ` + currentData.localName + ` ` + currentData.countryCode;
-                holidayContainer.appendChild(p1);
+                holidayContainerResult.appendChild(p1);
             }
             localStorage.setItem("data", JSON.stringify(data));
         })
         .catch(function (error) {
             handleModal();
-            console.log(error)
         });
 
     // Get the modal *** --FIX THIS --
@@ -106,10 +104,10 @@ $(document).ready(function () {
                 result = `
                 <img src="${data.Poster}"/>
                 <br>
-                <h1><u>Movie Title</u><h1>
-                <h2>${data.Title}<h2><br>
-                <h1><u>Plot</u><h2>
-                <h2>${data.Plot}<h2>
+                <h2><u>Movie Title</u><h2>
+                <h3>${data.Title}<h3><br>
+                <h2><u>Plot</u><h2>
+                <h3>${data.Plot}<h3>
                 `;
 
                 $("#movieContainerResult").html(result);
