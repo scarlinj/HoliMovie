@@ -10,11 +10,11 @@ to offer the user a chance for some entertainment along the way.
   
 In creating this app, we learned, and applied, the following: 
   
-- how to access third-party APIs
-- the practical (and magical) uses of JavaScript and JQuery
-- managing GitHubs many features with muliple collaborators
+- How to access third-party APIs
+- The practical (and magical) uses of JavaScript and JQuery
+- Managing GitHubs many features with muliple collaborators
 - UX style elements in CSS
-- teamwork and team management
+- Teamwork and team management
   
 We hope that you enjoy HoliMovie as the practical and joyful tool it is meant to be. Please feel free to reach out to the team with questions, comments, and suggestions to improve our app. 
 
