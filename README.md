@@ -56,7 +56,7 @@ Below are images illustrating what users should see as they navigate HoliMovie:
 This app was created by the following collaborators:
   
 - [Stephen Carlin](https://github.com/scarlinj)
-- [Noorullah Wardack](https://github.com/786-go)
+- [Noorullah Wardak](https://github.com/786-go)
 - [Jeongho Lee](https://github.com/Jeongholee21)
 - [Aaron Stokes](http://github.com/hestokes)
   
