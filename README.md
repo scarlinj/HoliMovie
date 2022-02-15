@@ -58,7 +58,7 @@ This app was created by the following collaborators:
 - [Stephen Carlin](https://github.com/scarlinj)
 - [Noorullah Wardack](https://github.com/786-go)
 - [Jeongho Lee](https://github.com/Jeongholee21)
-- [Aaron Stokes](http://https://github.com/hestokes)
+- [Aaron Stokes](http://github.com/hestokes)
   
 This project would not have been possible without the resources and tutelage offered by the following:
  
