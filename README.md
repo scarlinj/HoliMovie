@@ -44,6 +44,8 @@ To search for a movie:
   
 Below are images illustrating what users should see as they navigate the HoliMovie:
   
+![Step 3](https://github.com/scarlinj/Project-One/blob/main/assets/images/city-drop-down.png)  
+  
 ![Step 2](https://github.com/scarlinj/Project-One/blob/main/assets/images/city-year.png?raw=true "Step 2")
   
 ![Movie](https://github.com/scarlinj/Project-One/blob/main/assets/images/movie-search.png)
@@ -54,8 +56,8 @@ Below are images illustrating what users should see as they navigate the HoliMov
 This app was created by the following collaborators:
   
 - [Stephen Carlin]()
-- [Noorullah Wardack]()
-- [Jeongho Lee]()
+- [Noorullah Wardack](https://github.com/786-go)
+- [Jeongho Lee](https://github.com/Jeongholee21)
 - [Aaron Stokes](http://https://github.com/hestokes)
   
 This project would not have been possible without the resources and tutelage offered by the following:
