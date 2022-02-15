@@ -106,10 +106,10 @@ $(document).ready(function () {
                 result = `
                 <img src="${data.Poster}"/>
                 <br>
-                <h2>Movie Title<h2>
-                <h2>${data.Title}<h2>
-                <h2>Movie Plot<h2>
-                <h3>${data.Plot}<h3>
+                <h1><u>Movie Title</u><h1>
+                <h2>${data.Title}<h2><br>
+                <h1><u>Plot</u><h2>
+                <h2>${data.Plot}<h2>
                 `;
 
                 $("#movieContainerResult").html(result);

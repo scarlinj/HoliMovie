@@ -23,6 +23,7 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 15pt;
   height: 50px;
+  width: 135px;
   border: 1px solid var(--dark); 
   border-radius: var(--border-radius);
   box-shadow: 0 2px 1px rgba(0,0,0,0.09), 
