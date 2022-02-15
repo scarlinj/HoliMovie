@@ -23,8 +23,7 @@ We hope that you enjoy HoliMovie as the practical and joyful tool it is meant to
 
 - Description
 - Installation and Usage
-- [Credits](#credits)
-- [License](#license)
+- Credits
 
 ## Installation and Usage
 
@@ -42,7 +41,7 @@ Provide instructions and examples for use. Include screenshots as needed.
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
     ```md
-    ![alt text](assets/images/screenshot.png)
+    ![Step 2](assets/images/country-drop-down.png)
     ```
 
 ## Credits
@@ -50,12 +49,17 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 This app was created by the following collaborators:
   
 - [Stephen Carlin]()
-- [Noorullah]()
+- [Noorullah Wardack]()
 - [Jeongho Lee]()
 - [Aaron Stokes](http://https://github.com/hestokes)
   
 This project would not have been possible without the resources and tutelage offered by the following:
+ 
   
+- [JavaScript and APIs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+- [API resource](https://rapidapi.com/hub)  
+- [Modal help](https://www.w3schools.com/howto/howto_css_modals.asp)
+- [Memory issues](https://stackoverflow.com/questions/41655362/how-do-i-clear-javascript-console-and-delete-everything-stored-in-memory)
 - [Our Boot Camp](https://bootcamp.berkeley.edu/coding/)  
 - [UI Colors](https://flatuicolors.com/)
 - [UX design tips](https://uxplanet.org/neumorphic-buttons-using-basic-html-css-477cb6f941c0)
