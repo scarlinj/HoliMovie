@@ -55,7 +55,7 @@ Below are images illustrating what users should see as they navigate the HoliMov
   
 This app was created by the following collaborators:
   
-- [Stephen Carlin]()
+- [Stephen Carlin](https://github.com/scarlinj)
 - [Noorullah Wardack](https://github.com/786-go)
 - [Jeongho Lee](https://github.com/Jeongholee21)
 - [Aaron Stokes](http://https://github.com/hestokes)
