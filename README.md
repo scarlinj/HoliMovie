@@ -35,6 +35,11 @@ HoliMovie is designed to provide ready access to the holiday or movie informatio
 4. Click the submit button
 
 ## Usage
+  
+Below are images illustrating what users should see as they navigate the HoliMovie:
+  
+![Step 2](https://github.com/scarlinj/Project-One/blob/main/assets/images/city-year.png?raw=true "Step 2")
+  
 
   
 
