@@ -33,6 +33,12 @@ HoliMovie is designed to provide ready access to the holiday or movie informatio
 2. Select a country from the dropdown menu  
 3. Enter the desired year
 4. Click the submit button
+  
+To search for a movie:
+  
+1. Open the website URL
+2. Enter the name of a movie 
+3. click the search button
 
 ## Usage
   
@@ -40,7 +46,7 @@ Below are images illustrating what users should see as they navigate the HoliMov
   
 ![Step 2](https://github.com/scarlinj/Project-One/blob/main/assets/images/city-year.png?raw=true "Step 2")
   
-
+![Movie](https://github.com/scarlinj/Project-One/blob/main/assets/images/movie-search.png)
   
 
 ## Credits
