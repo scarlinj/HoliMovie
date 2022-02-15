@@ -42,7 +42,7 @@ To search for a movie:
 
 ## Usage
   
-Below are images illustrating what users should see as they navigate the HoliMovie:
+Below are images illustrating what users should see as they navigate HoliMovie:
   
 ![Step 3](https://github.com/scarlinj/Project-One/blob/main/assets/images/city-drop-down.png)  
   
